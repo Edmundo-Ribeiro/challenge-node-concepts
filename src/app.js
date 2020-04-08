@@ -15,7 +15,7 @@ function checkValidID(request, response, next){
   const repIndex = repositories.findIndex( ({id})=> id === request.params.id );
   
   if(repIndex<0){
-    return response.status(400).json({error:'There is no repository with this ID'})
+    return response.status(400).json({error:'There is no repository with the informed ID'})
   }
   request.locals = {repIndex};
   return next();
